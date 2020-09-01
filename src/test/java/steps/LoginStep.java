@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.java.en.*;
+import pages.CustomerLoginPage;
 import pages.LoginPage;
 import services.ReadProperties;
 import support.MyWebDriver;
@@ -18,8 +19,11 @@ public class LoginStep extends BaseUIStep {
     @When("user enter login {string} and password {string}")
     public void userEnterLoginAndPassword(String username, String password) {
         LoginPage loginPage = new LoginPage(webDriver);
-        loginPage.getEmailField().sendKeys(username);
-        loginPage.getPasswordField().sendKeys(password);
-        loginPage.getLoginButton().submit();
+        loginPage.getSignInButton().click();
+        CustomerLoginPage customerLoginPage = new CustomerLoginPage(webDriver);
+        customerLoginPage.getUsernameField().sendKeys(username);
+        customerLoginPage.getPasswordField().sendKeys(password);
+        customerLoginPage.getLoginButton().click();
+        waiters.waitForInvisibility(customerLoginPage.getLOGIN(), 20);
     }
 }

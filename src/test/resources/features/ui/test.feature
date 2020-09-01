@@ -1,5 +1,6 @@
 Feature: UI Test
-  Scenario: UI Test 1
+
+  Scenario: Login as customer
     Given login page is opened
-    When user enter login "atrostyanko+master@gmail.com" and password "QqtRK9elseEfAk6ilYcJ"
-    Then projects page is opened
+    When user enter login "steven.moreau@juiceplus.com" and password "Abcd1234"
+    Then the customer's profile page is displayed

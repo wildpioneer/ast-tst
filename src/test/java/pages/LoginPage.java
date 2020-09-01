@@ -3,9 +3,12 @@ package pages;
 import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import wrappers.UIElement;
 
 public class LoginPage extends BasePage {
+    private final By SIGNIN = By.cssSelector(".o-header__join .m-usermenu .a-button");
+
     protected By emailSelector = By.id("name");
     protected By passwordSelector = By.id("password");
     protected By loginSelector = By.id("button_primary");
@@ -24,7 +27,11 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        return new UIElement(driver, By.id("button_primary")).isDisplayed();
+        return new UIElement(driver, By.cssSelector(".o-header__join .m-usermenu .a-button")).isDisplayed();
+    }
+
+    public UIElement getSignInButton() {
+        return new UIElement(driver, SIGNIN);
     }
 
     public UIElement getEmailField() {

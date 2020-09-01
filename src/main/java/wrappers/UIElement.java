@@ -18,8 +18,10 @@ public class UIElement implements WebElement {
 
     public UIElement(WebDriver driver, By by) {
         this.driver = driver;
-        this.webElement = findElement(by);
+        //this.webElement = findElement(by);
         waiters = new Waiters(driver);
+        this.webElement = waiters.waitForVisibility(by);
+
     }
 
     @Override
