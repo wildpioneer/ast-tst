@@ -1,5 +1,5 @@
-import org.testng.annotations.DataProvider;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.testng.annotations.DataProvider;
 
 public class RunCucumberTest extends AbstractTestNGCucumberTests{
 

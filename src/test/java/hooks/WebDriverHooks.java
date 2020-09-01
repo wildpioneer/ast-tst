@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import support.MyWebDriver;
 
+
 public class WebDriverHooks {
 
     private final EventFiringWebDriver webDriver;
@@ -40,7 +41,7 @@ public class WebDriverHooks {
     }
 
     @Attachment(value = "Page screenshot", type = "image/png")
-    public byte[] saveScreenshot(byte[] screenShot) {
-        return screenShot;
+    private byte[] saveScreenshot(byte[] screenshot) {
+        return screenshot;
     }
 }
